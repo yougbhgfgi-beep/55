@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حكاية مازن ورودينة</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;700&family=Cairo:wght@300;400;700&family=Aref+Ruqaa:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Background Effects -->
+    <div id="stardust-container"></div>
+    <div class="background-hearts"></div>
+
+    <!-- Background Music -->
+    <audio id="bg-music" loop>
+        <source src="assets/audio/song.mp4" type="audio/mp4">
+    </audio>
+
+    <!-- Phase 1: The Entrance (Login) -->
+    <section id="login-section" class="screen active">
+        <div class="login-content">
+            <div class="lock-icon">
+                <i class="fas fa-lock pulse-gold"></i>
+            </div>
+            <h1 class="couple-names">مازن & رودينة</h1>
+            <p class="login-intro">هنا.. الصمتُ أبلغُ من الكلام.<br>حكايتنا ميثاقٌ غليظ، لا يقرؤه إلا من نطق قلبهُ
+                بالوفاء.</p>
+            <div class="input-wrapper date-login">
+                <input type="text" id="day-input" placeholder="يوم اللقا" maxlength="2">
+                <span class="separator">/</span>
+                <input type="text" id="month-input" placeholder="شهر الغرام" maxlength="2">
+                <span class="separator">/</span>
+                <input type="text" id="year-input" placeholder="سنة البداية" maxlength="4">
+                <button id="login-btn"><i class="fas fa-heart"></i></button>
+            </div>
+            <div id="error-msg" class="hidden">القلب يعرف مفتاحه... حاول تاني 😉</div>
+        </div>
+    </section>
+
+    <!-- Main Content (Hidden initially) -->
+    <main id="main-content" class="screen hidden">
+
+        <!-- Phase 2: Home (Birth of Destiny) -->
+        <section class="section home-section">
+            <h1 class="title-font">ميلاد القدر</h1>
+            <div class="typewriter-text" id="typewriter-1"></div>
+            <p class="sub-text fade-in-scroll">من 18 ديسمبر.. والحياة بقا ليها طعم تاني.</p>
+        </section>
+
+        <!-- Phase 3: Our Story (Timeline) -->
+        <section class="section story-section">
+            <h2 class="handwritten-font">ملحمة الحب</h2>
+            <div class="timeline">
+                <div class="timeline-item right">
+                    <div class="content">
+                        <h3>18 / 12 / 2024</h3>
+                        <p>اليوم اللي قلبي اختارك فيه.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="content">
+                        <h3>كل يوم</h3>
+                        <p>بختارك تاني وتالت.. وعاشر.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phase 4: Memories (Love Envelopes) -->
+        <section class="section memories-section">
+            <h2 class="title-font">رسائل من القلب</h2>
+            <div class="gallery-grid">
+                <!-- Envelope 1 -->
+                <div class="envelope-wrapper" onclick="toggleEnvelope(this)">
+                    <div class="envelope">
+                        <div class="front">
+                            <div class="stamp"><i class="fas fa-heart"></i></div>
+                        </div>
+                        <div class="card-message">
+                            <p>"أنتِ النعمة التي أدعو الله أن يديمها لي كل يوم."</p>
+                        </div>
+                        <div class="flap"></div>
+                        <div class="back"></div>
+                    </div>
+                    <p class="click-hint">افتحي الرسالة ✨</p>
+                </div>
+
+                <!-- Envelope 2 -->
+                <div class="envelope-wrapper" onclick="toggleEnvelope(this)">
+                    <div class="envelope">
+                        <div class="front">
+                            <div class="stamp"><i class="fas fa-star"></i></div>
+                        </div>
+                        <div class="card-message">
+                            <p>"وجودك في حياتي هو أجمل انتصاراتي، وأعظم قدري."</p>
+                        </div>
+                        <div class="flap"></div>
+                        <div class="back"></div>
+                    </div>
+                    <p class="click-hint">افتحي الرسالة ✨</p>
+                </div>
+
+                <!-- Envelope 3 -->
+                <div class="envelope-wrapper" onclick="toggleEnvelope(this)">
+                    <div class="envelope">
+                        <div class="front">
+                            <div class="stamp"><i class="fas fa-infinity"></i></div>
+                        </div>
+                        <div class="card-message">
+                            <p>"لا أرى في هذا الكون سواكِ، ولا ينبض قلبي إلا لكِ."</p>
+                        </div>
+                        <div class="flap"></div>
+                        <div class="back"></div>
+                    </div>
+                    <p class="click-hint">افتحي الرسالة ✨</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phase 5: Love Letter -->
+        <section class="section letter-section">
+            <div class="parchment">
+                <h2 class="handwritten-font">رسالة ليكِ</h2>
+                <p class="body-text">
+                    من يوم 18 / 12 / 2024، وأنا مش بس بحبك.. أنا بتنفس وجودك.<br>
+                    كل ثانية بتعدي بتثبتلي إنك أجمل رزق ربنا بعتهولي.<br>
+                    وجودك هو "الترتيب" اللي حياتي كانت محتاجاه.
+                </p>
+            </div>
+        </section>
+
+        <!-- Phase 5.5: Poems & Messages -->
+        <section class="section poems-section">
+            <h2 class="title-font">همسات العشاق</h2>
+            <div class="poems-grid">
+                <div class="poem-card">
+                    <p class="poem-quote">"أحبكِ.. لا لأنكِ الأجمل، بل لأنكِ الوحيدة التي مسحت غبار الحزن عن روحي."</p>
+                </div>
+                <div class="poem-card">
+                    <p class="poem-quote">"في عينيكِ خارطةٌ، ضعتُ فيها.. ولا أريدُ العودة."</p>
+                </div>
+                <div class="poem-card">
+                    <p class="poem-quote">"وإني أراكِ بعينِ القلبِ جنةً، يا كلَ من أحببتُ."</p>
+                </div>
+                <div class="poem-card">
+                    <p class="poem-quote">"أنتِ النمة التي يعزفها قلبي كل صباح."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Phase 6: Counter -->
+        <section class="section counter-section">
+            <h2 class="title-font">بقالنا مع بعض</h2>
+            <p>من 18 / 12 / 2024 .. والقلب بيدق باسمك.</p>
+            <div id="timer" class="timer-container">
+                <div class="time-box"><span id="years">0</span><small>سنة</small></div>
+                <div class="time-box"><span id="months">0</span><small>شهر</small></div>
+                <div class="time-box"><span id="days">0</span><small>يوم</small></div>
+                <div class="time-box"><span id="hours">0</span><small>ساعة</small></div>
+                <div class="time-box"><span id="minutes">0</span><small>دقيقة</small></div>
+                <div class="time-box"><span id="minutes">0</span><small>دقيقة</small></div>
+                <div class="time-box"><span id="seconds">0</span><small>ثانية</small></div>
+            </div>
+            <div class="heartbeat-container">
+                <p>وقلبي دق عشانك <span id="heartbeats" class="pulse-text">0</span> مرة.. ولا يزال ينبض.</p>
+            </div>
+        </section>
+
+        <!-- Phase 6.2: Reasons I Love You -->
+        <section class="section reasons-section">
+            <h2 class="handwritten-font">ليه بحبك؟</h2>
+            <div id="reasons-container" class="reason-box">
+                <p id="reason-text">..عشان إنتي السند..</p>
+            </div>
+        </section>
+
+        <!-- Phase 6.5: Love Meter -->
+        <section class="section meter-section">
+            <h2 class="title-font">مقياس الحب</h2>
+            <div class="meter-container">
+                <div class="fingerprint-scanner" id="fingerprint-btn">
+                    <i class="fas fa-fingerprint"></i>
+                </div>
+                <p id="meter-text">اضغط هنا لنقيس نبض الحب ❤️</p>
+                <div class="meter-bar-container hidden" id="meter-bar-container">
+                    <div class="meter-fill" id="meter-fill"></div>
+                    <span id="meter-value">0%</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Music Control (Visible) -->
+        <button id="music-btn" class="music-control"><i class="fas fa-play"></i></button>
+
+        <!-- Phase 7: Forever -->
+        <section class="section forever-section">
+            <p>سنشيخُ معاً، ويبقى حبنا شاباً كأول لقاء.</p>
+            <button id="forever-btn" class="glow-btn">♥ دايمًا مع بعض ♥</button>
+        </section>
+
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="hidden">تم تسجيل هذا الوعد في قلب القدر ✨</div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
