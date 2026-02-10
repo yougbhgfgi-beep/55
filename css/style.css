@@ -27,10 +27,16 @@ body {
     position: relative;
     /* Lock layout */
     touch-action: pan-y;
-    /* Disable horizontal swipe gestures if possible */
+    /* Disable horizontal swipe gestures */
     min-height: 100vh;
     min-height: 100dvh;
-    /* Dynamic height for mobile address bar fix */
+    /* Dynamic height for mobile */
+    overscroll-behavior-y: none;
+    /* Prevent bounce */
+    scroll-behavior: smooth;
+    /* Smooth scrolling */
+    -webkit-tap-highlight-color: transparent;
+    /* Remove blue tap box on mobile */
 }
 
 /* ... existing styles ... */
@@ -792,6 +798,8 @@ input:focus {
     bottom: -50px;
     color: var(--gold);
     animation: floatUp linear forwards;
+    will-change: transform, opacity;
+    /* GPU Optimize */
 }
 
 @keyframes floatUp {

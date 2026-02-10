@@ -283,8 +283,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 6000);
     }
 
-    // Increased frequency: Every 150ms (Lots of hearts!)
-    setInterval(createFloatingHeart, 150);
+    // Optimized frequency: Every 800ms (Smoother performance)
+    setInterval(createFloatingHeart, 800);
 
     // === ENVELOPE INTERACTION ===
     window.toggleEnvelope = function (element) {
