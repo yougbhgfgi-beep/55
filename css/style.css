@@ -28,6 +28,9 @@ body {
     /* Lock layout */
     touch-action: pan-y;
     /* Disable horizontal swipe gestures if possible */
+    min-height: 100vh;
+    min-height: 100dvh;
+    /* Dynamic height for mobile address bar fix */
 }
 
 /* ... existing styles ... */
@@ -37,7 +40,8 @@ body {
     body {
         font-size: 14px;
         overflow-x: hidden;
-        /* Double ensure */
+        background-attachment: scroll;
+        /* Fix jittery background on mobile */
     }
 
     .section {
