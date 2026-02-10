@@ -270,7 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
             heart.classList.add('heart-red');
         }
 
-        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.left = Math.random() * 90 + 'vw'; // Limit to 90vw to prevent scroll overflow
         heart.style.animationDuration = Math.random() * 3 + 3 + 's'; // Slower float for romance
         heart.style.opacity = Math.random() * 0.7 + 0.3; // More visible
         heart.style.fontSize = Math.random() * 30 + 15 + 'px'; // Varied sizes
