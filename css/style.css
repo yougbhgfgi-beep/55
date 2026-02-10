@@ -21,9 +21,65 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
+    max-width: 100vw;
+    /* Strict limit */
     overflow-x: hidden !important;
-    /* Fix for horizontal scroll */
-    min-height: 100vh;
+    position: relative;
+    /* Lock layout */
+    touch-action: pan-y;
+    /* Disable horizontal swipe gestures if possible */
+}
+
+/* ... existing styles ... */
+
+/* === RESPONSIVE DESIGN (Mobile) === */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+        overflow-x: hidden;
+        /* Double ensure */
+    }
+
+    .section {
+        padding: 2rem 1rem;
+        /* Reduced padding */
+        width: 100%;
+        overflow: hidden;
+        /* Clip section content */
+    }
+
+    /* Envelopes Mobile - Fix Width */
+    .envelope-wrapper {
+        margin: 1rem auto;
+        transform: scale(0.8);
+        /* Shrink slightly to fit safe area */
+        max-width: 90%;
+    }
+
+    /* Timeline Mobile */
+    .timeline-item {
+        width: 100%;
+        padding-left: 60px;
+        /* More space for line */
+        padding-right: 10px;
+    }
+
+    /* Timer Mobile */
+    .timer-container {
+        gap: 5px;
+    }
+
+    .time-box {
+        min-width: 45px;
+        padding: 5px;
+    }
+
+    /* Prevent title overflow */
+    h1.couple-names {
+        font-size: 2rem;
+        word-break: break-word;
+        /* Prevent long text overflow */
+    }
 }
 
 body {
