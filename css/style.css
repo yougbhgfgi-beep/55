@@ -10,14 +10,21 @@
     --font-body: 'Cairo', sans-serif;
 }
 
+html,
 body {
     margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden !important;
+    /* Fix for horizontal scroll */
+    min-height: 100vh;
+}
+
+body {
     background: linear-gradient(135deg, var(--bg-dark), var(--bg-accent));
     background-attachment: fixed;
     color: var(--text-main);
     font-family: var(--font-body);
-    overflow-x: hidden;
-    min-height: 100vh;
 }
 
 /* Utilities */
